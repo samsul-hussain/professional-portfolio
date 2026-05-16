@@ -507,47 +507,37 @@ textarea.form-control {
 /* Navigation Buttons */
 .next-section-container {
   display: flex;
-  justify-content: center; /* Centered for all devices */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Space between Prev and Next */
   margin-top: 5rem;
   padding-bottom: 2rem;
 }
 
-.btn-next {
+.btn-next, .btn-prev {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2rem;
   background: var(--bg-card);
   color: var(--text-primary);
   border: 2px solid var(--accent-color);
   border-radius: 50px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 0.9rem;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
-  white-space: nowrap; /* Prevent text from breaking on mobile */
-  min-width: 220px; /* Ensure a consistent professional shape */
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+  white-space: nowrap;
+  min-width: 180px;
 }
 
-@media (max-width: 768px) {
-  .next-section-container {
-    margin-top: 3rem;
-  }
-  
-  .btn-next {
-    padding: 0.8rem 1.8rem;
-    font-size: 0.8rem;
-    min-width: 180px;
-  }
-}
-
-.btn-next::before {
+.btn-next::before, .btn-prev::before {
   content: '';
   position: absolute;
   top: 0;
@@ -559,25 +549,47 @@ textarea.form-control {
   z-index: -1;
 }
 
-.btn-next:hover {
+.btn-next:hover, .btn-prev:hover {
   color: white;
   transform: translateY(-5px);
   box-shadow: 0 10px 25px var(--accent-glow);
   border-color: transparent;
 }
 
-.btn-next:hover::before {
+.btn-next:hover::before, .btn-prev:hover::before {
   left: 0;
 }
 
 .btn-next i {
-  font-size: 1rem;
-  animation: arrow-bounce 1.5s infinite;
+  animation: arrow-bounce-right 1.5s infinite;
 }
 
-@keyframes arrow-bounce {
+.btn-prev i {
+  animation: arrow-bounce-left 1.5s infinite;
+}
+
+@keyframes arrow-bounce-right {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(5px); }
+}
+
+@keyframes arrow-bounce-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
+}
+
+@media (max-width: 768px) {
+  .next-section-container {
+    flex-direction: column-reverse; /* Stack them on mobile, Next at top */
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  
+  .btn-next, .btn-prev {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.8rem 1.5rem;
+  }
 }
 
 /* Footer */
