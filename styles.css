@@ -664,6 +664,10 @@ footer {
 
 /* Mobile & Small Tablet (max-width: 768px) */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 0; /* More compact for mobile */
+  }
+
   .menu-toggle {
     display: block;
     font-size: 1.5rem;
