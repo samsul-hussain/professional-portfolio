@@ -493,40 +493,62 @@ textarea.form-control {
 /* Navigation Buttons */
 .next-section-container {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
+  justify-content: center; /* Centered for all devices */
+  margin-top: 5rem;
+  padding-bottom: 2rem;
 }
 
 .btn-next {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.8rem 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  gap: 1rem;
+  padding: 1rem 2.5rem;
+  background: var(--bg-card);
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  border: 2px solid var(--accent-color);
+  border-radius: 50px; /* Pill shape for professional look */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.btn-next::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-gradient);
+  transition: left 0.4s ease;
+  z-index: -1;
 }
 
 .btn-next:hover {
-  background: var(--accent-gradient);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px var(--accent-glow);
   border-color: transparent;
-  transform: translateX(5px);
-  box-shadow: 0 5px 15px var(--accent-glow);
+}
+
+.btn-next:hover::before {
+  left: 0;
 }
 
 .btn-next i {
-  font-size: 0.9rem;
-  transition: transform 0.3s ease;
+  font-size: 1rem;
+  animation: arrow-bounce 1.5s infinite;
 }
 
-.btn-next:hover i {
-  transform: translateX(3px);
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
 }
 
 /* Footer */
