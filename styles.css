@@ -73,26 +73,25 @@ a {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.4rem;
   font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 900;
   cursor: pointer;
   color: var(--text-primary);
   text-decoration: none;
-}
-
-.logo-img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--accent-color);
-  box-shadow: 0 0 10px var(--accent-glow);
+  letter-spacing: -0.5px;
 }
 
 .logo span {
   color: var(--accent-color);
+}
+
+.logo-portfolio {
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
 
 .menu-toggle {
