@@ -501,12 +501,13 @@ textarea.form-control {
 .btn-next {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   padding: 1rem 2.5rem;
   background: var(--bg-card);
   color: var(--text-primary);
   border: 2px solid var(--accent-color);
-  border-radius: 50px; /* Pill shape for professional look */
+  border-radius: 50px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -516,6 +517,20 @@ textarea.form-control {
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  white-space: nowrap; /* Prevent text from breaking on mobile */
+  min-width: 220px; /* Ensure a consistent professional shape */
+}
+
+@media (max-width: 768px) {
+  .next-section-container {
+    margin-top: 3rem;
+  }
+  
+  .btn-next {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.8rem;
+    min-width: 180px;
+  }
 }
 
 .btn-next::before {
