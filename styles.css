@@ -55,13 +55,25 @@ a {
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(10, 10, 15, 0.8);
+  padding: 1.5rem 0;
+  background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
-  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.scroll-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--accent-gradient);
+  z-index: 1002;
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .nav-content {
