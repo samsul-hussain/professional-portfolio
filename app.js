@@ -80,14 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Scroll Progress Bar Logic
+  // Scroll Progress Bar Logic (Robust for all devices)
   const progressBar = document.querySelector('.scroll-progress');
   window.addEventListener('scroll', () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const winScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    if (progressBar) {
-      progressBar.style.width = scrolled + "%";
+    
+    if (height > 0) {
+      const scrolled = (winScroll / height) * 100;
+      if (progressBar) {
+        progressBar.style.width = Math.min(scrolled, 100) + "%";
+      }
+    } else if (progressBar) {
+      progressBar.style.width = "0%";
     }
   });
 });

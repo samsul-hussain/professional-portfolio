@@ -853,3 +853,15 @@ footer {
     font-size: 0.75rem !important;
   }
 }
+
+/* Force Scroll Progress Bar Visibility */
+.scroll-progress {
+  display: block !important;
+  z-index: 9999 !important;
+}
+
+@media (max-width: 768px) {
+  .scroll-progress {
+    height: 4px !important; /* Slightly thicker for mobile touch visibility */
+  }
+}
