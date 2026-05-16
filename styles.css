@@ -121,6 +121,10 @@ a {
   width: 100%;
 }
 
+.mobile-profile-header {
+  display: none;
+}
+
 /* Main Content Area */
 main {
   margin-top: 100px; /* Increased space for fixed navbar */
@@ -571,6 +575,48 @@ footer {
 
   .nav-links.active {
     right: 0;
+  }
+
+  .mobile-profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 2rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .mobile-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+    margin-bottom: 0.5rem;
+  }
+
+  .mobile-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+  }
+
+  .mobile-tag {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    padding-top: 0;
   }
 
   .nav-links li a {
